@@ -44,7 +44,7 @@ export class TyresComponent implements OnInit {
 
     submit(){
       this.customerInfo.quotePrice = this.quotePrice;
-      this.customerInfo.businessEmail = "stevejohnr@gmail.com"
+      this.customerInfo.businessEmail = "stevejohnr15@mail.com"
       this._testDBService.testDBWrite(this.customerInfo);
     }
 

@@ -1,1 +1,54 @@
-<p>painter works!</p>
+<div class = "header">
+    <h1><b>Instant Trade Quotes</b></h1>
+        <mat-icon>how_to_reg</mat-icon> 
+</div>
+  <label ><b>Area (m<sup>2</sup>)
+  </b></label>
+  <section class = "tyre-quality-select">
+    <input 
+        matInput 
+        type="number" 
+        [(ngModel)]="area" 
+        (keyup)="generatePrice()"
+        (mouseup)="generatePrice()"
+        >
+  </section>
+  
+  
+  <label ><b>Environment</b></label>
+  <section class = "tyre-quality-select">
+    
+      <mat-radio-group [(ngModel)]="ChosenEnvironment" class = "radio-buttons">
+      <mat-radio-button *ngFor="let environment of environments" [value]="environment" (change)="updateEnvironment($event)">{{environment.location}}</mat-radio-button>
+    </mat-radio-group>
+  </section>
+
+  <section class = "tyre-quality-select">
+    
+    <mat-slide-toggle [(ngModel)]="supplyPaint" (change)="updateSupplyPaint($event)">Do you want us to supply the paint? {{supplyPaint ? 'Yes' : 'No'}}</mat-slide-toggle>
+  </section>
+  
+  <section class = "price-section">
+    <h2><b> Price Quote: </b>€{{ quotePrice }} </h2>
+  </section>
+  
+  
+  <form class="example-form">
+    <div class="user-form-div">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Joe Bloggs" [(ngModel)] = "customerInfo.name" name="customer">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="JoeBloggs@example.com" [(ngModel)] = "customerInfo.email" name="email">
+    </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Phone</mat-label>
+      <input matInput placeholder="081234567" [(ngModel)] = "customerInfo.phone" name="phone">
+    </mat-form-field>
+  
+    <button mat-raised-button (click)="submit()" [routerLink]=" '/response'" class = "submit-button"><b>Submit</b></button>
+  
+  </div>
+  

@@ -17,6 +17,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PainterComponent } from './painter/painter.component';
 import { TyresComponent } from './tyres/tyres.component';
 import { ResponseComponent } from './response/response.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 const routes: Routes = [
   {path: 'painter', component: PainterComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     TyresComponent,
-    ResponseComponent
+    ResponseComponent,
+    PainterComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ const routes: Routes = [
     MatInputModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    MatIconModule
+    MatIconModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
