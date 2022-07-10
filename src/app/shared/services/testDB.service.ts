@@ -13,7 +13,6 @@ export class testDB {
     ){}
 
     async testDBWrite(customerInfo: CustomerInfo) {
-
     const body = JSON.stringify(customerInfo);
 
         return await this._http.post<CustomerInfo>('https://0qfuguiuof.execute-api.eu-west-1.amazonaws.com/writeToTable',body).toPromise().then((result) => {

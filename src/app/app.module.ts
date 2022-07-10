@@ -18,6 +18,8 @@ import { PainterComponent } from './painter/painter.component';
 import { TyresComponent } from './tyres/tyres.component';
 import { ResponseComponent } from './response/response.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { TestPainterComponent } from './businesses/painters/test-painter/test-painter.component';
+import { TestTilersComponent } from './businesses/tilers/test-tilers/test-tilers.component';
 
 const routes: Routes = [
   {path: 'painter', component: PainterComponent},
@@ -30,7 +32,9 @@ const routes: Routes = [
     AppComponent,
     TyresComponent,
     ResponseComponent,
-    PainterComponent
+    PainterComponent,
+    TestPainterComponent,
+    TestTilersComponent
   ],
   imports: [
     BrowserModule,

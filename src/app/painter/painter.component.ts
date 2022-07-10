@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CustomerInfo } from '../customer-info';
 import { testDB } from '../shared/services/testDB.service';
 
@@ -23,7 +24,8 @@ export class PainterComponent implements OnInit {
     {location: 'Exterior', pricepriceMultiplyer : 1.2}];
 
     constructor(
-      private _testDBService: testDB
+      private _testDBService: testDB,
+      private router: Router
   ){}
 
     ngOnInit(){
@@ -48,7 +50,14 @@ export class PainterComponent implements OnInit {
 
     submit(){
       this.customerInfo.quotePrice = this.quotePrice;
+      this.customerInfo.extraInfo = 
+        {
+          "area" : this.area,
+          "environment" : this.ChosenEnvironment.location,
+          "supplyPaint" : this.supplyPaint ? "yes" : "no"
+        }
       this.customerInfo.businessEmail = "stevejohnr@gmail.com"
-      this._testDBService.testDBWrite(this.customerInfo);
+      const response = this._testDBService.testDBWrite(this.customerInfo);
+      this.router.navigate(['/response']);
     }
 }

@@ -4,5 +4,6 @@ export class CustomerInfo{
     phone!: string;
     quotePrice!: number;
     businessEmail!: string;
+    extraInfo!: {};
 
 }
